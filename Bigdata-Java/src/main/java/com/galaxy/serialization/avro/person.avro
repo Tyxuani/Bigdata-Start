@@ -1,0 +1,11 @@
+{"namespace": "com.galaxy.serialization.avro",
+ "type": "record",
+ "name": "Person",
+ "fields": [
+     {"name": "name", "type": "string"},
+     {"name": "favorite_number",  "type": ["int", "null"]},
+     {"name": "favorite_color", "type": ["string", "null"]}
+ ]
+}
+
+#java -jar .\avro-tools-1.8.2.jar compile schema .\person.avro java
