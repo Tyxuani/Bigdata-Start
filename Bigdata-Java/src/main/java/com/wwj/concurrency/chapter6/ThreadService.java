@@ -41,7 +41,7 @@ public class ThreadService {
             }
 
             try {
-                executeThread.sleep(1L);
+                Thread.sleep(1L);
             } catch (InterruptedException e) {
                 System.out.println("执行线程被打断!");
                 break;

@@ -32,7 +32,7 @@ public class ScriptEngineDemo {
         // 取得调用接口
         Invocable jsInvoke = (Invocable) engine;
         //执行脚本中定义的方法
-        Object result1 = jsInvoke.invokeFunction("add", new Object[]{13, 20});
+        Object result1 = jsInvoke.invokeFunction("add", 13, 20);
         System.out.println(result1);
 
         // 导入其他java包,使用其他包中的java类

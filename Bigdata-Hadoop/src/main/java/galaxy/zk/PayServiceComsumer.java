@@ -16,7 +16,7 @@ public class PayServiceComsumer {
     private volatile static List<String> services = new ArrayList<>();
 
     private static void conncte() throws IOException {
-        zk = new ZooKeeper("192.8.0.10:2181,192.8.0.12:2181,192.8.0.13:2181", 2000, (Watcher) event -> {
+        zk = new ZooKeeper("192.8.0.10:2181,192.8.0.12:2181,192.8.0.13:2181", 2000, event -> {
             if (event.getState() == KeeperState.SyncConnected && event.getType() == Watcher.Event.EventType.NodeChildrenChanged) {
                 System.out.println("可用服务列表发生变动");
                 try {

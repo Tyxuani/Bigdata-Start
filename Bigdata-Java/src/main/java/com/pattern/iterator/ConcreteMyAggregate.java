@@ -51,20 +51,17 @@ public class ConcreteMyAggregate {
 
 		@Override
 		public boolean hasNext() {
-			if(cursor<list.size()){
-				return true;
-			}
-			return false;
-		}
+            return cursor < list.size();
+        }
 
 		@Override
 		public boolean isFirst() {
-			return cursor==0?true:false;
+			return cursor == 0;
 		}
 
 		@Override
 		public boolean isLast() {
-			return cursor==(list.size()-1)?true:false;
+			return cursor == (list.size() - 1);
 		}
 
 		@Override

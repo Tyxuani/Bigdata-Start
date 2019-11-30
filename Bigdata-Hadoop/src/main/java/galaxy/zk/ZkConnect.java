@@ -6,6 +6,7 @@ import org.apache.zookeeper.data.Stat;
 
 import java.io.IOException;
 import java.io.UnsupportedEncodingException;
+import java.nio.charset.StandardCharsets;
 import java.util.List;
 import java.util.concurrent.TimeUnit;
 
@@ -37,11 +38,11 @@ public class ZkConnect {
 
     private static void createNode() throws UnsupportedEncodingException, KeeperException, InterruptedException {
         //开放权限的临时节点
-        String eph = zk.create("/aa/lu", "wenti".getBytes("UTF-8"), ZooDefs.Ids.OPEN_ACL_UNSAFE, CreateMode.EPHEMERAL_SEQUENTIAL);
+        String eph = zk.create("/aa/lu", "wenti".getBytes(StandardCharsets.UTF_8), ZooDefs.Ids.OPEN_ACL_UNSAFE, CreateMode.EPHEMERAL_SEQUENTIAL);
         System.out.println("eph: " + eph);
         TimeUnit.SECONDS.sleep(5);
         //永久节点
-        String per = zk.create("/aa/lu", "wenti".getBytes("UTF-8"), ZooDefs.Ids.OPEN_ACL_UNSAFE, CreateMode.PERSISTENT_SEQUENTIAL);
+        String per = zk.create("/aa/lu", "wenti".getBytes(StandardCharsets.UTF_8), ZooDefs.Ids.OPEN_ACL_UNSAFE, CreateMode.PERSISTENT_SEQUENTIAL);
         System.out.println("per: " + per);
 
     }
@@ -52,7 +53,7 @@ public class ZkConnect {
     }
 
     private static void setData() throws UnsupportedEncodingException, KeeperException, InterruptedException {
-        Stat stat = zk.setData("/aa/lu0000000001", "吃饭了吗?".getBytes("UTF-8"), -1);
+        Stat stat = zk.setData("/aa/lu0000000001", "吃饭了吗?".getBytes(StandardCharsets.UTF_8), -1);
         System.out.println(stat.toString());
     }
 
@@ -79,7 +80,7 @@ public class ZkConnect {
     }
 
     private static void watch() throws KeeperException, InterruptedException {
-        zk.getData("/aa", (Watcher) event -> {
+        zk.getData("/aa", event -> {
             System.out.println(event.toString());
             try {
                 watch();

@@ -12,7 +12,7 @@ import java.util.Date;
  *
  */
 public class Client3 {
-	public static void main(String[] args) throws CloneNotSupportedException, Exception {
+	public static void main(String[] args) throws Exception {
 		Date date = new Date(12312321331L);
 		Sheep s1 = new Sheep("少利",date);
 		System.out.println(s1);

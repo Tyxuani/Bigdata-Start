@@ -27,14 +27,14 @@ public class HdfsTyxClinet {
     }
 
     public static void initHdfsClient() {
-        String user = "root";
+        String user = "tyxuan";
         String uesrConf = "./src/main/resources/hdfsClient.xml";
         Configuration conf = new Configuration();
         conf.addResource(uesrConf);
         conf.set("dfs.replication", "2");
         conf.set("dfs.blocksize", "32m");
         try {
-            URI hdfsUri = new URI("hdfs://192.8.0.10:9000");
+            URI hdfsUri = new URI("hdfs://192.8.0.14:9000");
             fsClient = FileSystem.get(hdfsUri, conf, user);
         } catch (URISyntaxException e) {
             e.printStackTrace();

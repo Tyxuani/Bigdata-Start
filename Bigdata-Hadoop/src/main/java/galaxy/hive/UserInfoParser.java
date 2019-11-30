@@ -1,4 +1,4 @@
-package galaxy.hiveUDF;
+package galaxy.hive;
 
 import org.apache.hadoop.hive.ql.exec.UDF;
 

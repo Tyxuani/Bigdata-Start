@@ -8,6 +8,7 @@ import org.apache.hadoop.hbase.filter.*;
 import org.apache.hadoop.hbase.util.Bytes;
 
 import java.io.IOException;
+import java.nio.charset.StandardCharsets;
 import java.util.Iterator;
 
 public class HbaseClinet {
@@ -63,7 +64,7 @@ public class HbaseClinet {
         table = connect.getTable(TableName.valueOf("t_uer"));
         Put put = new Put("rk001".getBytes());
         put.addColumn("f222".getBytes(), ("n" +
-                "ame").getBytes(), "lwang".getBytes("UTF-8"));
+                "ame").getBytes(), "lwang".getBytes(StandardCharsets.UTF_8));
         put.addColumn(Bytes.toBytes("f222"), Bytes.toBytes("age"), "24".getBytes());
         table.put(put);
     }

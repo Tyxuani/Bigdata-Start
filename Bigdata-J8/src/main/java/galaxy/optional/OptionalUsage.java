@@ -13,7 +13,7 @@ public class OptionalUsage {
 
     private static Optional<Apple> createOptional() {
         Optional<Apple> apple1 = Optional.empty();
-        Optional<Apple> apple2 = Optional.<Apple>empty();
+        Optional<Apple> apple2 = Optional.empty();
         Optional<Apple> apple3 = Optional.of(new Apple(15, "yellow"));
         Optional<Apple> apple4 = Optional.ofNullable(null);
         Optional<Apple> apple5 = Optional.ofNullable(new Apple(15, "yellow"));

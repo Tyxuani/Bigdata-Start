@@ -96,10 +96,10 @@ public class JavassistAPI {
 //		cc.getDeclaredField("ename");   //获取指定的属性
 		
 		//增加相应的set和get方法
-		cc.addMethod(CtNewMethod.getter("getSalary", f1));;
-		cc.addMethod(CtNewMethod.getter("setSalary", f1));;
-		
-	}
+		cc.addMethod(CtNewMethod.getter("getSalary", f1));
+        cc.addMethod(CtNewMethod.getter("setSalary", f1));
+
+    }
 	
 	/**
 	 * 构造方法的操作

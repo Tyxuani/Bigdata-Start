@@ -48,7 +48,7 @@ class JobRunner implements Runnable {
         long start = System.currentTimeMillis();
         log.println("[ " + Thread.currentThread().getName() + " *** " + runnerId + " ]" + "JobRunner start task.........");
         try {
-            Thread.currentThread().sleep(5000L);
+            Thread.sleep(5000L);
         } catch (InterruptedException e) {
             e.printStackTrace();
         }

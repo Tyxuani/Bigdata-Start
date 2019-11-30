@@ -3,6 +3,8 @@
 
 package com.galaxy.serialization.protobuf;
 
+import com.google.protobuf.AbstractMessageLite;
+
 public final class AddressBookProtos {
   private AddressBookProtos() {}
   public static void registerAllExtensions(
@@ -275,7 +277,7 @@ public final class AddressBookProtos {
       private final int index;
       private final int value;
 
-      private PhoneType(int index, int value) {
+      PhoneType(int index, int value) {
         this.index = index;
         this.value = value;
       }
@@ -705,11 +707,7 @@ public final class AddressBookProtos {
         }
 
         public final boolean isInitialized() {
-          if (!hasNumber()) {
-            
-            return false;
-          }
-          return true;
+          return hasNumber();
         }
 
         public Builder mergeFrom(
@@ -1657,7 +1655,7 @@ public final class AddressBookProtos {
           java.lang.Iterable<? extends com.galaxy.serialization.protobuf.AddressBookProtos.Person.PhoneNumber> values) {
         if (phoneBuilder_ == null) {
           ensurePhoneIsMutable();
-          super.addAll(values, phone_);
+          addAll(values, phone_);
           onChanged();
         } else {
           phoneBuilder_.addAllMessages(values);
@@ -2343,7 +2341,7 @@ public final class AddressBookProtos {
           java.lang.Iterable<? extends com.galaxy.serialization.protobuf.AddressBookProtos.Person> values) {
         if (personBuilder_ == null) {
           ensurePersonIsMutable();
-          super.addAll(values, person_);
+          addAll(values, person_);
           onChanged();
         } else {
           personBuilder_.addAllMessages(values);

@@ -82,7 +82,7 @@ public class Tgroup {
                 Thread t = threads[i];
                 new Thread(threadGroup, () -> {
                     try {
-                        t.sleep(Integer.MAX_VALUE);
+                        Thread.sleep(Integer.MAX_VALUE);
                     } catch (InterruptedException e) {
                         System.out.println(t.getName() + "interrupt : " + e.getMessage());
                     }

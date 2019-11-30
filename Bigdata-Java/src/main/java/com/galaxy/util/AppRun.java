@@ -3,6 +3,7 @@ package com.galaxy.util;
 import java.io.IOException;
 import java.io.UnsupportedEncodingException;
 import java.nio.ByteBuffer;
+import java.nio.charset.StandardCharsets;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
@@ -25,7 +26,7 @@ public class AppRun {
 
     public static void allocate() throws UnsupportedEncodingException {
         ByteBuffer by = ByteBuffer.allocate(12);
-        by.put("hs".getBytes("UTF-8"));
+        by.put("hs".getBytes(StandardCharsets.UTF_8));
         StringUtil.println(15);
     }
 
