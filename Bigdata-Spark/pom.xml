@@ -10,7 +10,7 @@
     <artifactId>Bigdata-Spark</artifactId>
 
     <properties>
-        <spark.version>2.3.0</spark.version>
+        <spark.version>2.4.4</spark.version>
     </properties>
 
     <dependencies>
