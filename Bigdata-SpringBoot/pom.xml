@@ -20,7 +20,7 @@
         <compiler.source>1.8</compiler.source>
         <compiler.target>1.8</compiler.target>
         <junit.version>4.12</junit.version>
-        <springboot.version>1.5.9.RELEASE</springboot.version>
+        <springboot.version>2.5.12</springboot.version>
         <lombok.version>1.18.2</lombok.version>
     </properties>
 
